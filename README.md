@@ -88,8 +88,6 @@ This project is Docker Compose ready. Use Docker Compose to run the project **an
 
 > **NOTE:** Requires that you have Docker and Docker Compose installed.
 
-> **NOTE:** Requires that you manually initialize the MongoDB database using the scripts in `src/ignore` the first time the MongoDB container is started or after removing the MongoDB data volume.
-
 ### Start the Application
 
 To start the application, issue the following command at a terminal prompt.
@@ -142,6 +140,30 @@ exit
 ```
 
 ## Tech Stack
+
+- Node.js
+- Express.js
+- Typescript
+- Docker
+
+The DistributedLLM Backend API is built using a modern tech stack. Here are the key technologies used in this project:
+
+- **Node.js**: A powerful JavaScript runtime that allows us to build scalable and efficient server-side applications.
+
+- **Express.js**: A fast and minimalist web application framework for Node.js. It provides a robust set of features for building APIs and web applications.
+
+- **Typescript**: A typed superset of JavaScript that compiles to plain JavaScript. It adds static types and other advanced features to help catch errors and improve code quality.
+
+- **Docker**: A containerization platform that allows us to package the application and its dependencies into a lightweight, portable container. This ensures consistent and reproducible deployments across different environments.
+
+By leveraging these technologies, we have created a robust and scalable backend API that powers the DistributedLLM application.
+
+For more information on each technology, please refer to the following links:
+
+- [Node.js](https://nodejs.org/en/download/)
+- [Express.js](https://expressjs.com/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Docker](https://docs.docker.com/get-docker/)
 
 
 
