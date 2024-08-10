@@ -1,0 +1,52 @@
+services:
+  
+  app-python:
+    image: dllm/python-api
+    build: ./python-api
+    links:
+      - app-node
+    networks:
+      - dllm-net
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+  
+  app-node:
+    image: dllm/node-api
+    build: .
+    # container dependencies
+    depends_on:
+      - db
+    networks:
+      - dllm-net
+    # override application configuration
+    environment:
+      MONGODB_URL: mongodb://dllmapi:Dllms3cure!@db:27017/dllm
+    ports:
+      - "4000:4000"
+    restart: unless-stopped
+  
+  db:
+    # use MongoDB from Docker Hub
+    image: mongo:5.0
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    networks:
+      - dllm-net
+    # optionally expose MongoDB default port on 27017 to use Mongo shell
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+    volumes:
+      # persistent MongoDB data volumes
+      - dllm-data-db:/data/db
+      - ./etc/docker/mongo/init:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  # persistend Docker volume for MongoDB data
+  dllm-data-db:
+ 
+networks:
+  # Docker network for the application
+  dllm-net:
