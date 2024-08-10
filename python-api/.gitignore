@@ -1,0 +1,13 @@
+# The local python environment
+env
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cached python code
+__pycache__
+

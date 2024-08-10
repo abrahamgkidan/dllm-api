@@ -1,0 +1,5 @@
+# Add the packages used in main.py in here (the requirements.txt file)
+llamaai
+mistralai
+python-dotenv
+flask
