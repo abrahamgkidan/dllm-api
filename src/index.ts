@@ -3,7 +3,6 @@ import app from "./app";
 import config from "./config/config";
 import logger from "./config/logger";
 import { connect as dbConnect } from "./utils/database";
-// import prisma from "./lib/prisma";
 
 logger.debug(`starting API with configuration::${JSON.stringify(config)}`);
 let server: Server;
